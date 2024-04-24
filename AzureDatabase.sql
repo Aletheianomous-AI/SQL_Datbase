@@ -21,7 +21,7 @@ CREATE TABLE dbo.Chat_History (
 );
 
 -- Creating Conversations Table
-CREATE TABLE dbo.Conversations (
+CREATE TABLE dbo.Conversation (
     ConversationID INT PRIMARY KEY,
     ConversationName NVARCHAR(255) NOT NULL,
     UserID INT NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE dbo.Chat_Conversation (
     PRIMARY KEY (ChatID, UserID),
     FOREIGN KEY (ChatID) REFERENCES dbo.Chat_History(ChatID),
     FOREIGN KEY (UserID) REFERENCES dbo.Login(UserID),
-    FOREIGN KEY (ConversationID) REFERENCES dbo.Conversations(ConversationID)
+    FOREIGN KEY (ConversationID) REFERENCES dbo.Conversation(ConversationID)
 );
 
 -- Creating Citation_Chat_History Table
