@@ -12,6 +12,6 @@ FROM
 JOIN
     dbo.Chat_Conversation cc ON ch.Chat_ID = cc.Chat_ID
 JOIN
-    dbo.Conversations conv ON cc.Conversation_ID = conv.ConversationID
+    dbo.Conversation conv ON cc.Conversation_ID = conv.ConversationID
 WHERE
     conv.UserID = @SpecificUserID; -- Filters the results for the specific user
