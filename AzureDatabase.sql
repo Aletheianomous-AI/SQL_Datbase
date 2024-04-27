@@ -47,3 +47,10 @@ CREATE TABLE dbo.Citation_Chat_History (
     FOREIGN KEY (CitationID) REFERENCES dbo.Citation(CitationID),
     FOREIGN KEY (ChatID) REFERENCES dbo.Chat_History(ChatID)
 );
+
+-- Creating Email2FA Table
+CREATE TABLE dbo.Email2FA (
+	UserID INT NOT NULL,
+	EncryptedAuthCode VARCHAR(30) NOT NULL,
+	FOREIGN KEY (UserID) REFERENCES dbo.Login(UserID)
+)
