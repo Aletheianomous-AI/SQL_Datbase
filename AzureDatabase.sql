@@ -52,5 +52,6 @@ CREATE TABLE dbo.Citation_Chat_History (
 CREATE TABLE dbo.Email2FA (
 	UserID INT NOT NULL UNIQUE,
 	EncryptedAuthCode VARCHAR(30) NOT NULL,
+	TimeGenerated DATETIME NOT NULL,
 	FOREIGN KEY (UserID) REFERENCES dbo.Login(UserID)
 )
