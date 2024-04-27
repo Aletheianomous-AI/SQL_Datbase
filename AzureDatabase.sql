@@ -50,7 +50,7 @@ CREATE TABLE dbo.Citation_Chat_History (
 
 -- Creating Email2FA Table
 CREATE TABLE dbo.Email2FA (
-	UserID INT NOT NULL,
+	UserID INT NOT NULL UNIQUE,
 	EncryptedAuthCode VARCHAR(30) NOT NULL,
 	FOREIGN KEY (UserID) REFERENCES dbo.Login(UserID)
 )
